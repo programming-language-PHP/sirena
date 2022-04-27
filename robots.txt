@@ -1,0 +1,10 @@
+User-agent:*
+Allow: /index.php
+Allow: /solo creativity.php
+Allow: /gallery.php
+Allow: /inc/
+Disallow: /assets/
+Disallow: /img/
+Sitemap: http://z977850j.beget.tech/sitemap.xml
+Host: z977850j.beget.tech
+Crawl-delay: 5

@@ -1,0 +1,102 @@
+// Файл обнуляющих стилей
+@import "nullstyle";
+
+// Файл переменных
+@import "variables";
+
+.audio-container {
+    background: $var1;
+    width: 100%;
+    color: $var2;
+    margin: 11px 0 0;
+    padding: 4.7px 8.1px 1px 12.3px;
+    border-radius: 30px;
+}
+
+.audio-player {
+    width: 100%;
+    margin: 0;
+}
+
+.audio-hud {
+    padding: 2px;
+    display: grid;
+    column-gap: 5px;
+    grid-template-columns: 0.1fr 0.2fr 1fr 0.2fr;
+    align-items: center;
+
+    &__element {
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        height: 30px;
+        font-family: 'Lato';
+        font-size: 15px;
+    }
+
+    &__action {
+        width: 30px;
+
+        &_play,
+        &_pause {
+            background-repeat: no-repeat;
+        }
+
+        &_play {
+            background-image: url("../svg/track/__play.svg");
+            background-size: cover;
+        }
+
+        &_pause {
+            background-image: url("../svg/track/__pause.svg");
+            background-size: contain;
+        }
+    }
+
+    &__curr-time {}
+
+    &__progress-bar {}
+
+    &__duration {}
+}
+
+
+input[type='range'] {
+    height: 10px;
+    overflow: hidden;
+    -webkit-appearance: none;
+    background-color: $var4;
+    border-radius: 30px;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #13bba4;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: pointer;
+    background: #933BBB;
+    border-radius: 30px;
+    box-shadow: -99999px 0 0 99999px $var3;
+}
+
+input[type="range"]::-moz-range-progress {
+    background-color: $var3;
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: $var4;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background-color: $var3;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background-color: $var4;
+}
