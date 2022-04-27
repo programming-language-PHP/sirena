@@ -1,0 +1,84 @@
+.repertoire {
+  @include adaptiv-value('margin-top', 120, 60, 0);
+
+  &__items {
+    display: inline-block;
+  }
+
+  &__item {
+    & form {
+      display: inline-block;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    @include adaptiv-value('font-size', 40, 35, 0);
+    cursor: pointer;
+    transition: all 1s ease;
+
+    &:before {
+      display: inline-block;
+      width: 10px;
+      content: "+";
+      margin-right: 20px;
+      color: $repertoire_title_color;
+    }
+
+    &_hover:hover {
+      color: $repertoire_title_color;
+
+      &:before {
+        content: "-";
+      }
+    }
+
+    &_pressed {
+      color: $repertoire_title_color;
+
+      &:before {
+        content: "-";
+      }
+    }
+  }
+
+  &__song-list {
+  }
+}
+
+.song-list {
+  @include adaptiv-value('margin-left', 150, 50, 0);
+  @include adaptiv-value('font-size', 30, 20, 0);
+
+  &__item {
+  }
+
+  &__group-name {
+    font-weight: bold;
+
+    &__title {
+      color: $repertoire_title_color;
+      filter: contrast(50%);
+    }
+  }
+
+  &_hide {
+    display: none;
+  }
+}
+
+// форма
+.delete {
+  width: 75px;
+
+  & .btn-delete {
+    font-size: 24px;
+    background-color: transparent;
+    color: $repertoire_title_color;
+    filter: contrast(25%);
+
+    &:hover {
+      filter: contrast(200%);
+    }
+  }
+}

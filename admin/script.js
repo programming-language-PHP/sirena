@@ -5,34 +5,42 @@ let json = document.getElementById('repertoire').getAttribute('data-repertoires'
     groundingSubCategory = ''
 
 repertoire.forEach((musicData) => {
+    // Категория
     if (groundingCategory !== musicData.category) {
-        let category = `<h2 class="repertoire__title repertoire__title_hover">
-            ${musicData.category}
-            <form action='del_music.php' method='POST'>
-                <input type='hidden' name='item' value='${musicData.category}' /> 
-                <button type='submit'>&#10006;</button>
-            </form>
-        </h2>
-        <ul data-category="${musicData.category}" class="repertoire__song-list song-list song-list_hide"></ul>`
+        let category = `
+        <li class="repertoire__item">
+            <h2 class="repertoire__title repertoire__title_hover">
+                ${musicData.category}
+                <form class="delete" action='del_music.php' method='POST'>
+                    <input type='hidden' name='item' value='${musicData.category}' /> 
+                    <button class="btn-delete" type='submit'>&#10006;</button>
+                </form>
+            </h2>
+            <ul data-category="${musicData.category}" class="repertoire__song-list song-list song-list_hide"></ul>
+        </li>`
         $repertoireItems.insertAdjacentHTML('beforeend', category)
     }
+
+    // Подкатегория
     if (groundingSubCategory !== musicData.sub_category) {
-        let $category = document.querySelector('.repertoire__items ul:last-child'),
+        let $category = document.querySelector('.repertoire__items li:last-child>ul'),
             subCategory = `<li class="song-list__item">
-            <span class="song-list__group-name">${musicData.sub_category}</span> 
-            <form action='del_music.php' method='POST'>
+            <span class="song-list__group-name song-list__group-name__title">${musicData.sub_category}</span> 
+            <form class="delete" action='del_music.php' method='POST'>
                 <input type='hidden' name='item' value='${musicData.sub_category}' /> 
-                <button type='submit'>&#10006;</button>
+                <button class="btn-delete" type='submit'>&#10006;</button>
             </form>
         </li>`
         $category.insertAdjacentHTML('beforeend', subCategory)
     }
-    $category = document.querySelector('.repertoire__items ul:last-child')
+
+    // Музыка
+    $category = document.querySelector('.repertoire__items li:last-child>ul')
     item = `<li class="song-list__item">
         <span class="song-list__group-name">${musicData.executor} -</span> ${musicData.music_name} 
-        <form action='del_music.php' method='POST'>
+        <form class="delete" action='del_music.php' method='POST'>
             <input type='hidden' name='item' value='${musicData.id}' /> 
-            <button type='submit'>&#10006;</button>
+            <button class="btn-delete" type='submit'>&#10006;</button>
         </form>
     </li>`
     $category.insertAdjacentHTML('beforeend', item)
