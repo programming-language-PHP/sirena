@@ -1,0 +1,51 @@
+.footer {
+    box-shadow: 0px 10px 50px #EB426B, inset 0px 10px 50px #EB426B;
+    padding: 10px;
+
+    &__container {
+        display: flex;
+        height: 65px;
+        justify-content: center;
+        align-items: center;
+
+        & a {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            @include adaptiv-value("margin-right", 70, 50, 0);
+
+            &:last-child {
+                margin: 0px;
+            }
+        }
+    }
+
+    &__instagram {
+        background-image: url("../svg/footer/footer__instagram.svg");
+        background-repeat: no-repeat;
+    }
+
+    &__vk {
+        background-image: url("../svg/footer/footer__vk.svg");
+        background-repeat: no-repeat;
+    }
+
+    &__telegram {
+        background-image: url("../svg/footer/footer__telegram.svg");
+        background-repeat: no-repeat;
+    }
+
+    &__whatsapp {
+        background-image: url("../svg/footer/footer__whatsapp.svg");
+        background-repeat: no-repeat;
+    }
+
+    &__instagram,
+    &__vk,
+    &__telegram,
+    &__whatsapp {
+        &_hover:hover {
+            top: -5px;
+        }
+    }
+}

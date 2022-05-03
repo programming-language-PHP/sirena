@@ -1,0 +1,113 @@
+.full-screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('../img/index/full_screen.jpg') center / cover no-repeat fixed;
+
+    &__body {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 800px;
+        margin: 0px auto;
+        display: flex;
+        flex-direction: row;
+        padding: 0px 20px;
+    }
+
+    &__title {
+        @include adaptiv-value("font-size", 50, 30, 0);
+        font-style: italic;
+        letter-spacing: 9.6px;
+        margin: auto 25% auto 0px;
+    }
+
+    &__button {
+        @include adaptiv-value("width", 70, 50, 0);
+        @include adaptiv-value("height", 70, 50, 0);
+        margin: auto 0px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0);
+        background-image: url("../svg/full-screen/__button.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &__video {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+        overflow: auto;
+        /* добавляет скролл, когда не влазиет содержимое */
+        transition: all 0.3s ease 0s;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 70px 10px 20px 10px;
+
+        &.active {
+            top: 0;
+
+            & iframe {
+                transform: translate(-50%, -50%);
+                position: relative;
+                left: 50%;
+                top: 50%;
+                width: 80%;
+                height: 70%;
+            }
+        }
+    }
+
+    &__close {
+        display: none;
+
+        &.active {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 1vh;
+            width: 30px;
+            height: 20px;
+            z-index: 3;
+
+            &:before {
+                transform: rotate(45deg);
+                top: 9px;
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+                bottom: 9px;
+            }
+
+            & span {
+                transform: scale(0);
+                position: absolute;
+                background-color: #fff;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                top: 9px;
+                transition: all 0.3s ease 0s;
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                background-color: #fff;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                transition: all 0.3s ease 0s;
+            }
+        }
+
+        &_hover:hover {
+            cursor: pointer;
+        }
+    }
+}

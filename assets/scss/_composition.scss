@@ -1,0 +1,39 @@
+.composition {
+    margin: $margin-top;
+    text-align: center;
+
+    &__items {
+        display: grid;
+        column-gap: 60px;
+        row-gap: 20px;
+        @include adaptiv-circle(350, 310, 0);
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            & {
+                @include adaptiv-circle(350, 310, 1);
+            }
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template: 0.2fr 0.5fr / 1fr;
+        row-gap: 25px;
+        padding: 45px;
+        border-radius: 50%;
+        box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        @include elemGradient;
+    }
+
+    &__title {
+        margin: 0 auto;
+        @include adaptiv-value("font-size", 22, 20, 0);
+    }
+
+    &__text {
+        margin: auto;
+        @include adaptiv-value("font-size", 18, 16, 0);
+    }
+}

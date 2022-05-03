@@ -1,0 +1,29 @@
+// Скроллбар
+:root {
+  --scrollbarBg: #50117A;
+  --scrollbarThumb: #F0145A;
+  --scrollbarWidth: 12px;
+  --scrollbarBorder: 3px solid var(--scrollbarBg);
+  --scrollbarBorderRadius: calc(var(--scrollbarWidth) / 2);
+}
+
+body {
+  scrollbar-width: var(--scrollbarWidth);
+  scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);
+}
+
+body::-webkit-scrollbar {
+  width: var(--scrollbarWidth);
+  background-color: var(--scrollbarBg);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBg);
+  border-radius: var(--scrollbarBorderRadius);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbarThumb);
+  border-radius: var(--scrollbarBorderRadius);
+  border: var(--scrollbarBorder);
+}

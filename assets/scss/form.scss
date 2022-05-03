@@ -1,6 +1,19 @@
 // Файл переменных
 @import "variables";
 
+.slider {
+  margin-top: 70px;
+}
+
+.delete {
+  position: fixed;
+  top: 105%;
+  left: 60%;
+  -webkit-transform: translate(-105%, -60%);
+  -ms-transform: translate(-105%, -60%);
+  transform: translate(-105%, -60%);
+}
+
 .form {
   font-size: 24px;
 
@@ -26,6 +39,7 @@
       margin: 0 0 15px 0;
       padding: 10px;
       color: black;
+      border: 5px solid $gradient_color2;
 
       &:focus {
         filter: contrast(200%);

@@ -23,6 +23,7 @@ if (!isset($_SESSION['user_id'])) {
         ?>
         <main class="main">
             <section class="content">
+                <h1 class="title">Репертуар</h1>
                 <section class="form">
                     <form action="./music/add_music.php" method="POST">
                         <label for="category">Категория</label>
