@@ -308,7 +308,7 @@ body::-webkit-scrollbar-thumb {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: url('../../img/index/full_screen.jpg') center / cover no-repeat fixed;
+  background: url('../img/index/full_screen.jpg') center / cover no-repeat fixed;
 
   &__body {
     flex: 1 1 auto;
@@ -419,7 +419,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .main {
-  margin: 0px 15px;
+  margin: 70px 15px;
   position: relative;
 }
 
@@ -440,8 +440,6 @@ h1 {
 .content {
   max-width: 1200px;
   margin: 0px auto;
-  padding-top: 25px;
-  padding-bottom: 25px;
   @include adaptiv-value('padding-left', 15, 0, 0);
   @include adaptiv-value('padding-right', 15, 0, 0);
   font-size: 18px;
@@ -531,7 +529,6 @@ h1 {
 
 
 .pros {
-  margin: $margin-top;
 
   &__items {
     display: grid;

@@ -56,7 +56,7 @@ new Swiper('.image-slider', {
     },
 
     // Управление клавиатурой
-    keyboard: {
+    urlboard: {
         // Включить \ выключить
         enabled: true,
         // Включить \ выключить
@@ -240,17 +240,45 @@ new Swiper('.image-slider', {
     virtual: {
         slides: (function () {
             let slide = [],
-                arr_images = document.querySelector('div.hidden'),
-                images = JSON.parse(arr_images.dataset.array);
-            for (key in images) {
-                slide.push(`
-                    <div data-hash="slide-${images[key]}" class="image-slider__slide swiper-slide">
+                arr_images = document.querySelector('.slider'),
+                images = JSON.parse(arr_images.dataset.images)
+
+            // Находимся ли на странице gallery
+            let pathname = window.location.pathname, segmentPathname = pathname.split('/'),
+                lastPathIndex = segmentPathname.length - 1,
+                lastPathname = segmentPathname[lastPathIndex],
+                isGalleryPage = lastPathname === 'gallery.php',
+                first_directory = isGalleryPage ? './' : '../'
+
+            for (let index in images) {
+                let url, path_to_photography, filename
+                url = images[index]['url']
+                path_to_photography = first_directory + url
+                filename = path_to_photography.replace(/^.*[\\/]/, '')
+
+                let pathname = window.location.pathname,
+                    segmentPathname = pathname.split('/'),
+                    lastPathIndex = segmentPathname.length - 1, lastPathname = segmentPathname[lastPathIndex],
+                    isGalleryPage = lastPathname === '' || lastPathname === 'gallery.php',
+                    $btnDelete = `<form class="delete" action='./photo/del_photo.php' method='POST'>
+                    <input type='hidden' name='url' value='${url}' /> 
+                    <button class="btn-delete" type='submit'>Удалить</button>
+                </form>`
+
+                slide.unshift(`
+                    <div data-hash="slide-${filename}" class="image-slider__slide swiper-slide">
                         <div class="image-slider__image swiper-zoom-container">
-                            <img data-src="./img/gallery/${images[key]}" src="img/1x1.png" class="swiper-lazy" alt="Картинка">
+                            <img data-src="${path_to_photography}" src="${first_directory}assets/img/1x1.png" class="swiper-lazy" alt="Картинка">
                             <div class="swiper-lazy-preloader"></div>
                         </div>
+                        ${getBtnDelete(isGalleryPage, $btnDelete)}
                     </div>`);
             }
+
+            function getBtnDelete(isGalleryPage, $btnDelete) {
+                return isGalleryPage ? '' : $btnDelete
+            }
+
             return slide;
         }()),
     },
