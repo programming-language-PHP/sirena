@@ -9,6 +9,8 @@ function play(audioId) {
     //Кнопки
     let actionButton = document.getElementById(audioId + '__action');
 
+    //Запуск, пауза
+    audioAct();
 
     function audioAct() { //Запускаем или ставим на паузу
         if (audioPlayer.paused) {
@@ -23,8 +25,14 @@ function play(audioId) {
         }
     }
 
-    //Запуск, пауза
-    audioAct();
+    //Отображение времени
+    audioPlayer.addEventListener('timeupdate', audioProgress);
+
+    function audioProgress() { //Отображаем время воспроизведения
+        progress = (Math.floor(audioPlayer.currentTime) / (Math.floor(audioPlayer.duration) / 100));
+        progressBar.value = progress;
+        currTime.innerHTML = audioTime(audioPlayer.currentTime);
+    }
 
     function audioTime(time) { //Рассчитываем время в секундах и минутах
         time = Math.floor(time);
@@ -41,11 +49,10 @@ function play(audioId) {
         return minutesVal + ':' + secondsVal;
     }
 
-    function audioProgress() { //Отображаем время воспроизведения
-        progress = (Math.floor(audioPlayer.currentTime) / (Math.floor(audioPlayer.duration) / 100));
-        progressBar.value = progress;
-        currTime.innerHTML = audioTime(audioPlayer.currentTime);
-    }
+    //Перемотка
+    progressBar.addEventListener('click', audioChangeTime);
+    progressBar.addEventListener('touchstart', audioChangeTime);
+    progressBar.addEventListener('touched', audioChangeTime);
 
     function audioChangeTime(e) { //Перематываем
         let pageX = e.pageX || e.touches[0].pageX;
@@ -53,19 +60,25 @@ function play(audioId) {
         let progress = mouseX / (progressBar.offsetWidth / 100);
         audioPlayer.currentTime = audioPlayer.duration * (progress / 100);
     }
-
-    //Отображение времени
-    audioPlayer.addEventListener('timeupdate', audioProgress);
-    //Перемотка
-    progressBar.addEventListener('click', audioChangeTime);
-    progressBar.addEventListener('touchstart', audioChangeTime);
-    progressBar.addEventListener('touched', audioChangeTime);
 }
 
 let players = document.querySelectorAll(".audio-hud__action");
 players.forEach((elem) => {
+    let audioId = elem.id.split('__')[0];
+    determinePlaybackTime(audioId);
     elem.addEventListener("click", (item) => {
         let audioId = item.target.id.split('__')[0];
         play(audioId);
     });
 });
+
+function determinePlaybackTime(audioId) {
+    let audio = document.getElementById(audioId);
+    let durationTime = document.getElementById(audioId + '__duration');
+    audio.onloadeddata = () => {
+        let time = Math.floor(audio.duration);
+        let minutes = Math.floor(time / 60);
+        let seconds = Math.floor(time - minutes * 60);
+        durationTime.innerHTML = String(minutes) + ':' + String(seconds);
+    }
+}

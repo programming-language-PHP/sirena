@@ -13,13 +13,13 @@ if (!isset($_SESSION['user_id'])) {
         <meta name="viewport" content="width=device-width">
         <title>Административная панель</title>
         <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="../assets/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../assets/css/admin.css"/>
     </head>
 
     <body>
     <div class="wrapper">
         <?php
-        include 'templates/inc/header.html';
+        include 'inc/__header.php';
         ?>
     </div>
 

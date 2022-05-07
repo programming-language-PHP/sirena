@@ -3,7 +3,7 @@
         <img src="./assets/svg/sirena_icon.svg" alt="logo">
     </a>
     <?php
-    if (basename($_SERVER['SCRIPT_NAME']) == 'index.php') {
+    if (basename($_SERVER['SCRIPT_NAME']) === 'index.php') {
     ?>
         <div class="header__burger">
             <span></span>
@@ -14,7 +14,7 @@
     <nav class="header__menu">
         <ul class="header__list">
             <?php
-            if (basename($_SERVER['SCRIPT_NAME']) == 'index.php') {
+            if (basename($_SERVER['SCRIPT_NAME']) === 'index.php') {
             ?>
                 <li>
                     <a href="#pros" class="header__link header__link_hover">Плюсы работы с певицы Sirena</a>

@@ -1,5 +1,5 @@
 <?php
-if (basename($_SERVER['SCRIPT_NAME']) == 'gallery.php') {
+if (basename($_SERVER['SCRIPT_NAME']) === 'gallery.php') {
     require_once('./inc/create_json.php');
     include './inc/connect_db.php';
 } else {

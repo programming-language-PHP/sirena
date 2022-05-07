@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -6,55 +9,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
     <?php include ".././inc/head.php" ?>
-    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/authorization.css" /> -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/form.css" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/auth.css"/>
 
 </head>
 
 <body>
-    <div class="wrapper">
-        <main class="main">
-            <section class="content">
-                <section class="form">
-                    <form method="post" action="" name="signin-form">
+<div class="wrapper">
+    <main class="main">
+        <section class="content">
+            <section class="form">
+                <form method="post" action="access.php" name="signin-form">
+                    <?php
+                    if (isset($_SESSION['error'])) { ?>
+                        <p class="error"><?= $_SESSION['error'] ?></p>
                         <?php
-                        session_start();
-                        include('../inc/connect_db.php');
-                        if (isset($_POST['login'])) {
-                            $username = $_POST['username'];
-                            $password = $_POST['password'];
-                            $query = "SELECT * FROM user WHERE user='$username'";
-                            $result = mysqli_query($link, $query);
-                            $isAccess = mysqli_num_rows($result) != 0;
-                            if ($isAccess) {
-                                $data_user = mysqli_fetch_array($result);
-                                if (password_verify($password, $data_user['password'])) {
-                                    $_SESSION['user_id'] = $data_user['id'];
-                                    header('Location: index.php');
-                                    exit;
-                                } else { ?>
-                                    <p class="error">Неверные пароль или имя пользователя!</p>
-                                <?php
-                                }
-                            } else { ?>
-                                <p class="error">Неверные пароль или имя пользователя!</p>
-                        <?php
-                            }
-                        }
-                        ?>
-                        <label for="username">Имя</label>
-                        <input id="username" name="username" type="text" pattern="[a-zA-Z0-9]+" required />
+                        unset($_SESSION['error']);
+                    }
+                    ?>
+                    <label for="username">Имя</label>
+                    <input id="username" name="username" type="text" pattern="[a-zA-Z0-9]+" required/>
 
-                        <label for="password">Пароль</label>
-                        <input id="password" name="password" type="password" name="password" required />
+                    <label for="password">Пароль</label>
+                    <input id="password" name="password" type="password" name="password" required/>
 
-                        <button type="submit" name="login" value="login">Войти</button>
-                    </form>
-                </section>
+                    <button type="submit" name="login" value="login">Войти</button>
+                </form>
             </section>
-        </main>
-    </div>
+        </section>
+    </main>
+</div>
 </body>
 
 </html>

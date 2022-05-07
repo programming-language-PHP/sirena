@@ -12,14 +12,13 @@ if (!isset($_SESSION['user_id'])) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width">
         <?php include "../inc/head.php" ?>
-        <link rel="stylesheet" type="text/css" href="../assets/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="../assets/css/form.css"/>
+        <link rel="stylesheet" type="text/css" href="../assets/css/admin-repertoire.css"/>
     </head>
 
     <body>
     <div class="wrapper">
         <?php
-        include 'templates/inc/header.html';
+        include 'inc/__header.php';
         ?>
         <main class="main">
             <section class="content">

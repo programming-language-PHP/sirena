@@ -1,0 +1,57 @@
+.form {
+  font-size: 24px;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & input,
+    & button {
+      font-size: 24px;
+      @include adaptiv-value('width', 450, 250, 0);
+      @include adaptiv-value('height', 40, 30, 0);
+      box-shadow: 0 10px 50px 0 $gradient_color2, inset 0 10px 50px 0 $gradient_color2;
+      border-radius: 50px;
+    }
+
+    & label {
+      margin: 0 0 5px 0;
+    }
+
+    & input {
+      margin: 0 0 15px 0;
+      padding: 10px;
+      color: black;
+      border: 5px solid $gradient_color2;
+
+      &:focus {
+        filter: contrast(200%);
+      }
+    }
+
+    & button {
+      background: $repertoire_title_color;
+
+      &:hover {
+        filter: contrast(200%);
+      }
+    }
+  }
+}
+
+.delete {
+  width: 75px;
+  margin: 0 auto;
+
+  & .btn-delete {
+    font-size: 24px;
+    background-color: transparent;
+    color: $repertoire_title_color;
+    filter: contrast(25%);
+
+    &:hover {
+      filter: contrast(200%);
+    }
+  }
+}

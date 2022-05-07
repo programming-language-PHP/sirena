@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
     <?php include "./inc/head.php" ?>
-    <link rel="stylesheet" type="text/css" href="assets/css/swiper@7.0.8/swiper-bundle.min.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/gallery.css"/>
 </head>
 
 <body>
@@ -19,7 +18,7 @@
 <!--    </div>-->
 <div class="wrapper">
     <?php
-    include "./inc/header.php";
+    include "./inc/__header.php";
     ?>
     <main class="main">
         <section class="content">
@@ -70,7 +69,7 @@
         </section>
     </main>
     <?php
-    include './inc/footer.html';
+    include './inc/__footer.html';
     ?>
 </div>
 <script src="./assets/js/preload.js"></script>

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
     <?php include "./inc/head.php" ?>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 <div class="wrapper">
     <section class="full-screen">
         <?php
-        include "./inc/header.php";
+        include "./inc/__header.php";
         ?>
         <div class="full-screen__body">
             <h2 class="full-screen__title">SIRENA</h2>
@@ -212,7 +212,7 @@
         </section>
     </main>
     <?php
-    include './inc/footer.html';
+    include './inc/__footer.html';
     ?>
 </div>
 

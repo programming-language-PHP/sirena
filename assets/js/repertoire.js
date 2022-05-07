@@ -10,7 +10,7 @@ let pathname = window.location.pathname,
     isFirstPage = lastPathname === '' || lastPathname === 'index.php'
 
 repertoire.forEach((musicData) => {
-    let $btnDelete = `<form class="delete" action='del_music.php' method='POST'>
+    let $btnDelete = `<form class="delete" action='./music/del_music.php' method='POST'>
                     <input type='hidden' name='item' value='${musicData.category}' /> 
                     <button class="btn-delete" type='submit'>&#10006;</button>
                 </form>`

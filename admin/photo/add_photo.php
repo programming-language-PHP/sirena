@@ -1,5 +1,5 @@
 <?php
-include '../inc/connect_db.php';
+include '../../inc/connect_db.php';
 $url = 'assets/img/gallery/';
 $file_data = array_combine($_FILES['files']['name'], $_FILES['files']['tmp_name']);
 foreach ($file_data as $filename => $file_tmp_name) {
@@ -12,7 +12,7 @@ foreach ($file_data as $filename => $file_tmp_name) {
     $sql = "UPDATE photo SET url = '$upload_file' WHERE id = $last_id";
     mysqli_query($link, $sql);
 
-    $upload_file = '../' . $upload_file;
+    $upload_file = '../../' . $upload_file;
     move_uploaded_file($file_tmp_name, $upload_file);
 }
 mysqli_close($link);
