@@ -6,6 +6,12 @@
   }
 
   &__item {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
     & form {
       display: inline-block;
     }
@@ -51,6 +57,11 @@
   @include adaptiv-value('font-size', 30, 20, 0);
 
   &__item {
+    margin-top: 5px;
+
+    &:last-child {
+      margin-top: 0;
+    }
   }
 
   &__group-name {

@@ -43,6 +43,7 @@ if (!isset($_SESSION['user_id'])) {
     <script src="../assets/js/swiper@7.0.8/swiper-bundle.min.js"></script>
     <script src="../assets/js/swiper@7.0.8/script.js"></script>
     <script src='../assets/js/admin/script.js'></script>
+    <script src="../assets/js/burger_menu.js"></script>
     </body>
 
     </html>

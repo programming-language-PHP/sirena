@@ -47,6 +47,7 @@ if (!isset($_SESSION['user_id'])) {
         </main>
     </div>
     <script src="../assets/js/repertoire.js"></script>
+    <script src="../assets/js/burger_menu.js"></script>
     </body>
 
     </html>

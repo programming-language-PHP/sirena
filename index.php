@@ -218,7 +218,9 @@
 
 <script src="./assets/js/preload.js"></script>
 <script src="./assets/js/repertoire.js"></script>
-<script src="./assets/js/script.js"></script>
+<!--<script src="./assets/js/script.js"></script>-->
+<script src="./assets/js/burger_menu.js"></script>
+<script src="./assets/js/fullscreen.js"></script>
 <?php
 include "./inc/Yandex Metrika.html";
 ?>

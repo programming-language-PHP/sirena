@@ -22,7 +22,7 @@ if (!isset($_SESSION['user_id'])) {
         include 'inc/__header.php';
         ?>
     </div>
-
+    <script src="../assets/js/burger_menu.js"></script>
     </body>
 
     </html>

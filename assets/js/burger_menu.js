@@ -11,14 +11,13 @@ function togClass(burger_menu) {
 }
 
 let header__burger = document.querySelector('.header__burger');
-let fullscreen__button = document.querySelector('.full-screen__button');
-let fullscreen__close = document.querySelector('.full-screen__close');
+
 let header__menu = document.querySelector('.header__menu');
 let header__list = document.querySelector('.header__list');
 let header__links = document.querySelectorAll('.header__link');
 let burger_menu = document.querySelectorAll('.header__burger,.header__menu,.header__link');
 
-if (header__burger && fullscreen__button) {
+if (header__burger) {
 
     header__menu.classList.add('header__menu_burger');
     header__list.classList.add('header__list_burger');
@@ -30,16 +29,6 @@ if (header__burger && fullscreen__button) {
                 elem.classList.remove('active');
             }
         });
-    });
-
-    fullscreen__close.addEventListener('click', () => {
-        const fullscreen__video = document.querySelectorAll('.full-screen__close,.full-screen__video');
-        togClass(fullscreen__video, 'video__active');
-    });
-
-    fullscreen__button.addEventListener('click', () => {
-        const fullscreen__video = document.querySelectorAll('.full-screen__close,.full-screen__video');
-        togClass(fullscreen__video, 'video__active');
     });
 
     header__burger.addEventListener('click', () => {

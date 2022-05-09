@@ -18,8 +18,12 @@ if (!isset($_SESSION['user_id']) or $_SESSION['user_id'] != 1) {
 
     <body>
     <div class="wrapper">
+        <?php
+        include 'inc/__header.php';
+        ?>
         <main class="main">
             <section class="content">
+                <h1 class="content__title">Регистрация</h1>
                 <section class="form">
                     <form method="post" action="access.php" name="signin-form">
                         <?php
@@ -44,6 +48,7 @@ if (!isset($_SESSION['user_id']) or $_SESSION['user_id'] != 1) {
             </section>
         </main>
     </div>
+    <script src="../assets/js/burger_menu.js"></script>
     </body>
 
     </html>

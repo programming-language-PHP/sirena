@@ -42,16 +42,16 @@ if (!isset($_SESSION['user_id'])) {
                         <button type="submit">Отправить файл</button>
                     </form>
                 </section>
-                <div class="content__players players">
-                    <?php
-                    include "../inc/solo creativity/__player.php";
-                    ?>
-                </div>
+                <h1 class="content__title">Сольное творчество</h1>
+                <?php
+                include "../inc/solo creativity/__player.php";
+                ?>
             </section>
         </main>
     </div>
     </body>
     <script src='../assets/js/admin/script.js'></script>
     <script src="../assets/js/audio.js"></script>
+    <script src="../assets/js/burger_menu.js"></script>
     </html>
 <?php } ?>

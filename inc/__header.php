@@ -1,21 +1,22 @@
 <header class="header">
-    <a href="index.php" class="header__logo">
+    <a href="/" class="header__logo">
         <img src="./assets/svg/sirena_icon.svg" alt="logo">
     </a>
     <?php
-    if (basename($_SERVER['SCRIPT_NAME']) === 'index.php') {
-    ?>
+    $is_page_home = basename($_SERVER['SCRIPT_NAME']) === 'index.php';
+    if ($is_page_home) {
+        ?>
         <div class="header__burger">
             <span></span>
         </div>
-    <?php
+        <?php
     }
     ?>
     <nav class="header__menu">
         <ul class="header__list">
             <?php
-            if (basename($_SERVER['SCRIPT_NAME']) === 'index.php') {
-            ?>
+            if ($is_page_home) {
+                ?>
                 <li>
                     <a href="#pros" class="header__link header__link_hover">Плюсы работы с певицы Sirena</a>
                 </li>
@@ -31,7 +32,7 @@
                 <li>
                     <a href="#repertoire" class="header__link header__link_hover">Репертуар</a>
                 </li>
-            <?php
+                <?php
             }
             ?>
             <li>

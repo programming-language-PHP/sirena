@@ -17,18 +17,15 @@
     <main class="main">
         <section class="content">
             <h1 class="content__title">Сольное творчество</h1>
-            <div class="content__players players">
-                <?php
-                include "./inc/solo creativity/__player.php";
-                ?>
-            </div>
+            <?php
+            include "./inc/solo creativity/__player.php";
+            ?>
         </section>
     </main>
     <?php
     include './inc/__footer.html';
     ?>
 </div>
-<script src="assets/js/script.js"></script>
 <script src="assets/js/audio.js"></script>
 <?php
 include "./inc/Yandex Metrika.html";

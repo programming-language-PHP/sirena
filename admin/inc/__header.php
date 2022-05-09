@@ -5,6 +5,9 @@ session_start();
     <a href="/" class="header__logo">
         <img src="../assets/svg/sirena_icon.svg" alt="logo">
     </a>
+    <div class="header__burger">
+        <span></span>
+    </div>
     <nav class="header__menu">
         <ul class="header__list">
             <li>
@@ -25,7 +28,7 @@ session_start();
             }
             ?>
             <li>
-                <a href="./close.php" class="header__link header__link_hover">Выйти</a>
+                <a href="./exit.php" class="header__link header__link_hover">Выйти</a>
             </li>
         </ul>
     </nav>
