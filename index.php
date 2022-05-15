@@ -11,12 +11,6 @@
 </head>
 
 <body>
-<!--<div class="preloader">-->
-<!--    <div class="preloader__row">-->
-<!--        <div class="preloader__item"></div>-->
-<!--        <div class="preloader__item"></div>-->
-<!--    </div>-->
-<!--</div>-->
 
 <div class="wrapper">
     <section class="full-screen">
@@ -44,7 +38,7 @@
                 <div class="pros__items">
                     <div class="pros__item">
                         <div class="pros__image">
-                            <img src="./assets/img/index/microphone.png" alt="">
+                            <img src="./assets/svg/pros/microphone.svg" alt="">
                         </div>
                         <div class="pros__text">
                             6 сыгранных музыкантов, включая женский и два мужских вокала!
@@ -52,7 +46,7 @@
                     </div>
                     <div class="pros__item">
                         <div class="pros__image">
-                            <img src="./assets/img/index/man_with_microphone.png" alt="">
+                            <img src="./assets/svg/pros/man_with_microphone.svg" alt="">
                         </div>
                         <div class="pros__text">
                             Безупречный вокал, который пробирает до глубины души!
@@ -60,7 +54,7 @@
                     </div>
                     <div class="pros__item">
                         <div class="pros__image">
-                            <img src="./assets/img/index/musicnote.png" alt="">
+                            <img src="./assets/svg/pros/musicnote.svg" alt="">
                         </div>
                         <div class="pros__text">
                             Осилит любую песню на любом иностранном языке!
@@ -218,7 +212,6 @@
 
 <script src="./assets/js/preload.js"></script>
 <script src="./assets/js/repertoire.js"></script>
-<!--<script src="./assets/js/script.js"></script>-->
 <script src="./assets/js/burger_menu.js"></script>
 <script src="./assets/js/fullscreen.js"></script>
 <?php

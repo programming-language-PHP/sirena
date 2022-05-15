@@ -24,16 +24,25 @@ if (!isset($_SESSION['user_id'])) {
             <section class="content">
                 <section class="form">
                     <form enctype="multipart/form-data" action="./photo/add_photo.php" method="POST">
+                        <?php
+                        if (isset($_SESSION['error'])) { ?>
+                            <p class="error"><?= $_SESSION['error'] ?></p>
+                            <?php
+                            unset($_SESSION['error']);
+                        } ?>
                         <input type="file" name="files[]" accept=".jpg,.jpeg,.png" id="form__file"
-                               class="form form__file" multiple>
+                               class="form__file" multiple>
                         <label for="form__file" class="form__file-button">
                             <span class="form__file-icon-wrapper">
                                 <img class="form__file-icon" src="../assets/svg/admin/photos/add.svg"
                                      alt="Выбрать файл" width="25">
                             </span>
+                            <input type="hidden" id="count_files" name="count_files">
                             <span class="form__file-button-text">Выберите файл</span>
                         </label>
-                        <button type="submit">Отправить файл</button>
+                        <label for="form__link">Или ссылка</label>
+                        <textarea name="links" id="form__links" class="form__links"></textarea>
+                        <button type="submit">Отправить</button>
                     </form>
                 </section>
                 <?php include '../inc/gallery/__photos.php' ?>

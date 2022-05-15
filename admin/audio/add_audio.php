@@ -4,7 +4,7 @@ $audio_dir = '../../audio/';
 $file_data = array_combine($_FILES['files']['name'], $_FILES['files']['tmp_name']);
 $passage = 1;
 $count_file = count($file_data);
-if ($count_file === 0 or $count_file === 1) {
+if ($count_file === 1) {
     $_SESSION['error'] = 'Ошибка: недостаточное количество файлов. Должно быть два файла обложка и аудио.';
 } else {
     $number_file = 0;

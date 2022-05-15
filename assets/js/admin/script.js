@@ -8,9 +8,10 @@ Array.prototype.forEach.call(inputs, function (input) {
         if (this.files && this.files.length >= 1)
             countFiles = this.files.length
 
-        if (countFiles)
+        if (countFiles) {
             label.querySelector('.form__file-button-text').innerText = 'Выбрано файлов: ' + countFiles
-        else
+            document.getElementById('count_files').value = countFiles
+        } else
             label.querySelector('.form__file-button-text').innerText = labelVal
     })
 })

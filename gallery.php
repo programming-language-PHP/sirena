@@ -10,12 +10,6 @@
 </head>
 
 <body>
-<!--    <div class="preloader">-->
-<!--        <div class="preloader__row">-->
-<!--            <div class="preloader__item"></div>-->
-<!--            <div class="preloader__item"></div>-->
-<!--        </div>-->
-<!--    </div>-->
 <div class="wrapper">
     <?php
     include "./inc/__header.php";

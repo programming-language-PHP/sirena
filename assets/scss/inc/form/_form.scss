@@ -9,8 +9,8 @@
     & input,
     & button {
       font-size: 24px;
-      @include adaptiv-value('width', 450, 250, 0);
-      @include adaptiv-value('height', 40, 30, 0);
+      width: 250px;
+      height: 40px;
       box-shadow: 0 10px 50px 0 $gradient_color2, inset 0 10px 50px 0 $gradient_color2;
       border-radius: 50px;
     }
@@ -37,6 +37,16 @@
         filter: contrast(200%);
       }
     }
+  }
+
+  &__links {
+    font-size: 20px;
+    background-color: $repertoire_title_color;
+    @include adaptiv-value('width', 400, 320, 0);
+    height: 250px;
+    margin-bottom: 25px;
+    padding: 15px;
+
   }
 }
 

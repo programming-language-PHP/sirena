@@ -253,7 +253,11 @@ new Swiper('.image-slider', {
             for (let index in images) {
                 let url, path_to_photography, filename
                 url = images[index]['url']
-                path_to_photography = first_directory + url
+                if (isValidHttpUrl(url)) {
+                    path_to_photography = url
+                } else {
+                    path_to_photography = first_directory + url
+                }
                 filename = path_to_photography.replace(/^.*[\\/]/, '')
 
                 let pathname = window.location.pathname,
@@ -273,6 +277,18 @@ new Swiper('.image-slider', {
                         </div>
                         ${getBtnDelete(isGalleryPage, $btnDelete)}
                     </div>`);
+            }
+
+            function isValidHttpUrl(string) {
+                let url;
+
+                try {
+                    url = new URL(string);
+                } catch (_) {
+                    return false;
+                }
+
+                return url.protocol === "http:" || url.protocol === "https:";
             }
 
             function getBtnDelete(isGalleryPage, $btnDelete) {
