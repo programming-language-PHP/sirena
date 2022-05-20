@@ -10,20 +10,42 @@
 body {
   scrollbar-width: var(--scrollbarWidth);
   scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);
+
+  &::-webkit-scrollbar {
+    width: var(--scrollbarWidth);
+    background-color: var(--scrollbarBg);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--scrollbarBg);
+    border-radius: var(--scrollbarBorderRadius);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbarThumb);
+    border-radius: var(--scrollbarBorderRadius);
+    border: var(--scrollbarBorder);
+  }
 }
 
-body::-webkit-scrollbar {
-  width: var(--scrollbarWidth);
-  background-color: var(--scrollbarBg);
-}
+// Репертуар
+.song-list {
+  scrollbar-width: var(--scrollbarWidth);
+  scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);
 
-body::-webkit-scrollbar-track {
-  background: var(--scrollbarBg);
-  border-radius: var(--scrollbarBorderRadius);
-}
+  &::-webkit-scrollbar {
+    width: var(--scrollbarWidth);
+    background-color: var(--scrollbarBg);
+  }
 
-body::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbarThumb);
-  border-radius: var(--scrollbarBorderRadius);
-  border: var(--scrollbarBorder);
+  &::-webkit-scrollbar-track {
+    background: var(--scrollbarBg);
+    border-radius: var(--scrollbarBorderRadius);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbarThumb);
+    border-radius: var(--scrollbarBorderRadius);
+    border: var(--scrollbarBorder);
+  }
 }

@@ -22,14 +22,13 @@ if (!isset($_SESSION['user_id'])) {
         ?>
         <main class="main">
             <section class="content">
-                <h1 class="title">Репертуар</h1>
                 <section class="form">
                     <form action="./music/add_music.php" method="POST">
                         <label for="category">Категория</label>
                         <input id="category" name="category" type="text" required>
 
                         <label for="sub_category">Под категория</label>
-                        <input id="sub_category" name="sub_category" type="text" required>
+                        <input id="sub_category" name="sub_category" type="text">
 
                         <label for="executor">Автор</label>
                         <input id="executor" name="executor" type="text" required>

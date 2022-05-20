@@ -45,7 +45,7 @@ if (!isset($_SESSION['user_id'])) {
                         <button type="submit">Отправить</button>
                     </form>
                 </section>
-                <?php include '../inc/gallery/__photos.php' ?>
+                <?php include '../inc/__photos.php' ?>
             </section>
         </main>
     </div>

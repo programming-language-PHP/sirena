@@ -241,14 +241,9 @@ new Swiper('.image-slider', {
         slides: (function () {
             let slide = [],
                 arr_images = document.querySelector('.slider'),
-                images = JSON.parse(arr_images.dataset.images)
-
-            // Находимся ли на странице gallery
-            let pathname = window.location.pathname, segmentPathname = pathname.split('/'),
-                lastPathIndex = segmentPathname.length - 1,
-                lastPathname = segmentPathname[lastPathIndex],
-                isGalleryPage = lastPathname === 'gallery.php',
-                first_directory = isGalleryPage ? './' : '../'
+                images = JSON.parse(arr_images.dataset.images),
+                firstDirectory = isMainPage() ? './' : '../'
+            // let firstDirectory = './'
 
             for (let index in images) {
                 let url, path_to_photography, filename
@@ -256,15 +251,11 @@ new Swiper('.image-slider', {
                 if (isValidHttpUrl(url)) {
                     path_to_photography = url
                 } else {
-                    path_to_photography = first_directory + url
+                    path_to_photography = firstDirectory + url
                 }
                 filename = path_to_photography.replace(/^.*[\\/]/, '')
 
-                let pathname = window.location.pathname,
-                    segmentPathname = pathname.split('/'),
-                    lastPathIndex = segmentPathname.length - 1, lastPathname = segmentPathname[lastPathIndex],
-                    isGalleryPage = lastPathname === '' || lastPathname === 'gallery.php',
-                    $btnDelete = `<form class="delete" action='./photo/del_photo.php' method='POST'>
+                let $btnDelete = `<form class="delete" action='./photo/del_photo.php' method='POST'>
                     <input type='hidden' name='url' value='${url}' /> 
                     <button class="btn-delete" type='submit'>Удалить</button>
                 </form>`
@@ -272,11 +263,20 @@ new Swiper('.image-slider', {
                 slide.unshift(`
                     <div data-hash="slide-${filename}" class="image-slider__slide swiper-slide">
                         <div class="image-slider__image swiper-zoom-container">
-                            <img data-src="${path_to_photography}" src="${first_directory}assets/img/1x1.png" class="swiper-lazy" alt="Картинка">
+                            <img data-src="${path_to_photography}" src="${firstDirectory}assets/img/1x1.png" class="swiper-lazy" alt="Картинка">
                             <div class="swiper-lazy-preloader"></div>
                         </div>
-                        ${getBtnDelete(isGalleryPage, $btnDelete)}
+                        ${getBtnDelete(isMainPage(), $btnDelete)}
                     </div>`);
+            }
+
+            function isMainPage() {
+                // Находимся ли на главной странице
+                let pathname = window.location.pathname,
+                    segmentPathname = pathname.split('/'),
+                    lastPathIndex = segmentPathname.length - 1,
+                    lastPathname = segmentPathname[lastPathIndex]
+                return lastPathname === '' || lastPathname === 'index.php'
             }
 
             function isValidHttpUrl(string) {
@@ -291,8 +291,8 @@ new Swiper('.image-slider', {
                 return url.protocol === "http:" || url.protocol === "https:";
             }
 
-            function getBtnDelete(isGalleryPage, $btnDelete) {
-                return isGalleryPage ? '' : $btnDelete
+            function getBtnDelete(isMainPage, $btnDelete) {
+                return isMainPage ? '' : $btnDelete
             }
 
             return slide;

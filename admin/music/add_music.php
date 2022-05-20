@@ -1,5 +1,5 @@
 <?php
-include 'connect_db.php';
+include '../../inc/connect_db.php';
 
 // Экранизация символов в строке
 $category = mysqli_real_escape_string($link, $_POST['category']);

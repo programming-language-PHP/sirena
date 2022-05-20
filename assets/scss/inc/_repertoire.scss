@@ -6,11 +6,6 @@
   }
 
   &__item {
-      margin-bottom: 10px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
 
     & form {
       display: inline-block;
@@ -22,6 +17,7 @@
     @include adaptiv-value('font-size', 40, 35, 0);
     cursor: pointer;
     transition: all 1s ease;
+    margin-bottom: 10px;
 
     &:before {
       display: inline-block;
@@ -48,11 +44,15 @@
     }
   }
 
-  &__song-list {
-  }
+  &__song-list {}
 }
 
 .song-list {
+  height: auto;
+  max-height: 300px !important;
+  overflow: auto !important;
+  padding: 10px;
+
   @include adaptiv-value('margin-left', 150, 50, 0);
   @include adaptiv-value('font-size', 30, 20, 0);
 
@@ -67,7 +67,7 @@
   &__group-name {
     font-weight: bold;
 
-    &__title {
+    &_title {
       color: $repertoire_title_color;
       filter: contrast(50%);
     }
@@ -76,4 +76,8 @@
   &_hide {
     display: none;
   }
+}
+
+.executor {
+  text-transform: uppercase;
 }

@@ -11,6 +11,9 @@ session_start();
     <nav class="header__menu">
         <ul class="header__list">
             <li>
+                <a href="/" class="header__link header__link_hover">Главная</a>
+            </li>
+            <li>
                 <a href="./repertoire.php" class="header__link header__link_hover">Репертуар</a>
             </li>
             <li>

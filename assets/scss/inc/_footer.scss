@@ -24,28 +24,27 @@
 
   &__instagram {
     background-image: url("../svg/footer/footer__instagram.svg");
-    background-repeat: no-repeat;
   }
 
   &__vk {
     background-image: url("../svg/footer/footer__vk.svg");
-    background-repeat: no-repeat;
   }
 
   &__telegram {
     background-image: url("../svg/footer/footer__telegram.svg");
-    background-repeat: no-repeat;
+
   }
 
   &__whatsapp {
     background-image: url("../svg/footer/footer__whatsapp.svg");
-    background-repeat: no-repeat;
   }
 
   &__instagram,
   &__vk,
   &__telegram,
   &__whatsapp {
+    background-repeat: no-repeat;
+
     &_hover:hover {
       top: -5px;
     }
