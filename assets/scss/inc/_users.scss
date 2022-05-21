@@ -1,0 +1,13 @@
+.users {
+    display: grid;
+    // max-width: 850px;
+    margin: 0 auto;
+    grid-template-columns: repeat(6, .2fr);
+    text-align: center;
+    justify-content: center;
+    grid-gap: 5px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(3, .2fr);
+    }
+}

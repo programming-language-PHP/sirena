@@ -14,7 +14,7 @@
             if ($is_page_home) {
             ?>
                 <li>
-                    <a href="#pros" class="header__link header__link_hover">Плюсы работы с певицы Sirena</a>
+                    <a href="#pros" class="header__link header__link_hover">Плюсы работы с Sirena</a>
                 </li>
                 <li>
                     <a href="#about-me" class="header__link header__link_hover">О певице Sirena</a>
@@ -23,7 +23,7 @@
                     <a href="#cards" class="header__link header__link_hover">Услуги</a>
                 </li>
                 <li>
-                    <a href="#composition" class="header__link header__link_hover">Варианты составов музыкантов</a>
+                    <a href="#composition" class="header__link header__link_hover">Варианты составов</a>
                 </li>
                 <li>
                     <a href="#photos" class="header__link header__link_hover">Фотографии</a>

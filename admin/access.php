@@ -39,17 +39,37 @@ if (isset($_POST['reg'])) {
             mysqli_query($link, $sql);
             $last_id = mysqli_insert_id($link);
             mysqli_close($link);
-
-            $_SESSION['user_id'] = $last_id;
-            header('Location: index.php');
-            exit;
         } else {
             $_SESSION['error'] = 'Пользователь с таким именем существует.';
         }
     } else {
         $_SESSION['error'] = 'Пароли не совпали.';
     }
+}
 
+// Смена пароля
+if (isset($_POST['change_password'])) {
+    $user_id = $_SESSION['user_id'];
+    $old_password = mysqli_real_escape_string($link, $_POST['old_password']);
 
+    $query = "SELECT * FROM user WHERE id = $user_id";
+    $result = mysqli_query($link, $query);
+    $data_user = mysqli_fetch_array($result);
+    echo $old_password . '<br/>';
+    echo $data_user['password'];
+    if (password_verify($old_password, $data_user['password'])) {
+        $new_password = mysqli_real_escape_string($link, $_POST['new_password']);
+        $repeat_new_password = mysqli_real_escape_string($link, $_POST['repeat_new_password']);
+        if ($new_password === $repeat_new_password) {
+            $hash_new_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $sql = "UPDATE user SET password = '$hash_new_password' WHERE id = $user_id";
+            mysqli_query($link, $sql);
+            $_SESSION['error'] = 'Всё прошло успешно :)';
+        } else {
+            $_SESSION['error'] = 'Новые пароли не совпали.';
+        }
+    } else {
+        $_SESSION['error'] = 'Неверный старый пароль.';
+    }
 }
 header("Location: " . $_SERVER['HTTP_REFERER']);

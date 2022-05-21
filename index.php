@@ -30,7 +30,7 @@
                 // Фотографии
                 include './inc/__photos.php';
                 // Видео
-                // include './inc/index/__video.html';
+                include './inc/index/__video.html';
                 // Репертуар
                 include './inc/repertoire.php';
                 ?>

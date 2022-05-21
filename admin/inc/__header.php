@@ -27,9 +27,15 @@ session_start();
                 <li>
                     <a href="./reg.php" class="header__link header__link_hover">Регистрация</a>
                 </li>
-                <?php
+                <li>
+                    <a href="./users.php" class="header__link header__link_hover">Пользователи</a>
+                </li>
+            <?php
             }
             ?>
+            <li>
+                <a href="./change_password.php" class="header__link header__link_hover">Сменить пароль</a>
+            </li>
             <li>
                 <a href="./exit.php" class="header__link header__link_hover">Выйти</a>
             </li>

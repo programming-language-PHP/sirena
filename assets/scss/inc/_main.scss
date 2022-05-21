@@ -13,7 +13,7 @@
 
 h1 {
   text-shadow: 10px 4px 4px rgba(0, 0, 0, 0.25);
-  @include adaptiv-value('font-size', 48, 40, 0);
+  @include adaptiv-value('font-size', 48, 34, 0);
   font-style: italic;
   letter-spacing: 9.6px;
   text-align: center;
