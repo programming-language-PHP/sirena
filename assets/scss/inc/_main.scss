@@ -5,18 +5,10 @@
 }
 
 .main {
-  margin: 140px 15px 70px 15px;
+  // margin: 140px 15px 70px 15px;
   position: relative;
   /* Чтобы занимал оставшееся пространство */
   flex-grow: 1;
-}
-
-h1 {
-  text-shadow: 10px 4px 4px rgba(0, 0, 0, 0.25);
-  @include adaptiv-value('font-size', 48, 34, 0);
-  font-style: italic;
-  letter-spacing: 9.6px;
-  text-align: center;
 }
 
 .hidden {
@@ -26,39 +18,40 @@ h1 {
 }
 
 .content {
-  max-width: 1200px;
-  margin: 0 auto;
-  @include adaptiv-value('padding-left', 15, 0, 0);
-  @include adaptiv-value('padding-right', 15, 0, 0);
-  font-size: 18px;
-  line-height: 150%;
+  margin-top: 100px;
+
+  // line-height: 150%;
+  & section {
+    &:not(.repertoire):not(.slider) {
+      margin: 0 auto;
+      @include adaptiv-value('padding', 50, 35, 0);
+    }
+
+    &.slider>.title {
+      @include adaptiv-value('padding-left', 50, 35, 0);
+    }
+  }
+
+
 
   &__title {
-    margin: 0 0 50px 0;
     line-height: 50px;
+    @include adaptiv-value('padding-left', 50, 35, 0);
   }
 
-  &__pros {
-  }
+  &__pros {}
 
-  &__about-me {
-  }
+  &__about-me {}
 
-  &__video {
-  }
+  &__video {}
 
-  &__cards {
-  }
+  &__cards {}
 
-  &__composition {
-  }
+  &__composition {}
 
-  &__slider {
-  }
+  &__slider {}
 
-  &__players {
-  }
+  &__players {}
 
-  & p {
-  }
+  & p {}
 }

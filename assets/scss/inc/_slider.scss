@@ -1,18 +1,15 @@
 .slider {
-  margin: 120px auto 0 auto;
+  padding: 50px 0;
 
-  &__title {
-  }
+  &__title {}
 }
 
 .image-slider {
   padding: 0px 0 70px 0;
 
-  &__wrapper {
-  }
+  &__wrapper {}
 
-  &__slide {
-  }
+  &__slide {}
 
   &__image {
     & img {
@@ -22,21 +19,24 @@
   }
 }
 
+.swiper-pagination, .swiper-pagination-current, .swiper-pagination-total {
+  color: $color5;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   font-size: 0;
-  width: 50px;
-  height: 50px;
+  width: 73px;
+  height: 73px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0);
   background-size: contain;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 
   & img {
     width: 100%;
   }
 }
 
-.swiper-button-next {
+.swiper-button-prev {
   transform: scale(-1, 1);
 }

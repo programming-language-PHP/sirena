@@ -17,7 +17,7 @@ while (!is_dir($path_to_assets)) {
     $path_to_assets = '../' . $path_to_assets;
 }
 
-$swiper_button = $path_to_assets . 'svg/slider/__button.svg';
+$swiper_button = $path_to_assets . 'svg/slider/slider__button.svg';
 ?>
 <section data-name='images' data-images='<?= createJson($result) ?>'
          class="content__slider slider" id="photos">

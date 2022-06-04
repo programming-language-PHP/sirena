@@ -13,7 +13,7 @@
   &__container {
     padding: 11px 8px;
     border-radius: 50px;
-    background-color: #464646;
+    background-color: $color5;
   }
 
   &__image {
@@ -33,9 +33,9 @@
 }
 
 .audio-container {
-  background: $var1;
+  background: $color4;
   width: 100%;
-  color: $var2;
+  color: $color1;
   margin: 11px 0 0;
   padding: 4.7px 8.1px 1px 12.3px;
   border-radius: 30px;
@@ -98,7 +98,7 @@ input[type='range'] {
   height: 10px;
   overflow: hidden;
   -webkit-appearance: none;
-  background-color: $var4;
+  background-color: $color5;
   border-radius: 30px;
 }
 
@@ -113,23 +113,23 @@ input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 10px;
   cursor: pointer;
-  background: #933BBB;
+  background: $color3;
   border-radius: 30px;
-  box-shadow: -99999px 0 0 99999px $var3;
+  box-shadow: -99999px 0 0 99999px $color3;
 }
 
 input[type="range"]::-moz-range-progress {
-  background-color: $var3;
+  background-color: $color3;
 }
 
 input[type="range"]::-moz-range-track {
-  background-color: $var4;
+  background-color: $color5;
 }
 
 input[type="range"]::-ms-fill-lower {
-  background-color: $var3;
+  background-color: $color3;
 }
 
 input[type="range"]::-ms-fill-upper {
-  background-color: $var4;
+  background-color: $color5;
 }

@@ -1,5 +1,5 @@
 .video {
-    max-width: 1200px;
+    // max-width: 1200px;
     margin: 120px auto 0 auto;
 
     &__title {}
@@ -7,7 +7,17 @@
     &__items {
         display: grid;
         gap: 20px;
-        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
+
+        // grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        @media (max-width: 768px) {
+            // @include adaptiv-circle(550, 310, 1);
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 500px) {
+            // @include adaptiv-circle(550, 310, 1);
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__item {

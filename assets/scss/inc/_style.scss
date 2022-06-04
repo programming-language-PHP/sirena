@@ -1,12 +1,12 @@
-@import 'font';
+// Файл переменных
+@import "variables";
 
 // Файл обнуляющих стилей
 @import "nullstyle";
 
-@import 'scrollbar';
+@import 'font';
 
-// Файл переменных
-@import "variables";
+@import 'scrollbar';
 
 @import 'header';
 

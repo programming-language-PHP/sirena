@@ -1,8 +1,27 @@
 .full-screen {
-    min-height: 100vh;
+    // top: 70px;
+    min-height: 120vh;
     display: flex;
     flex-direction: column;
-    background: url('../img/index/full_screen.jpg') center / cover no-repeat fixed;
+
+    background: url('../img/index/full_screen.jpg') top / cover no-repeat fixed;
+    // /* Масштабируем фон */
+    // background-size: auto 120%;
+    // background-color: $color5;
+    // background-size: 70% auto;
+
+    & img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 120%;
+        //         display:block;
+        //   width:100%;
+        //   height:100%;
+        //   object-fit: cover;
+    }
 
     &__body {
         flex: 1 1 auto;
@@ -16,7 +35,6 @@
 
     &__title {
         @include adaptiv-value("font-size", 50, 30, 0);
-        font-style: italic;
         letter-spacing: 9.6px;
         margin: auto 25% auto 0px;
     }
@@ -30,6 +48,21 @@
         background-image: url("../svg/full-screen/__button.svg");
         background-size: contain;
         background-repeat: no-repeat;
+    }
+
+    &__link {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include adaptiv-value('margin', 50, 5, 0);
+        padding: 16px 71px;
+        border-radius: 15px;
+        color: $color1;
+        background-color: $color3;
+
+        &:hover {
+            box-shadow: 0px 4px 91px rgba(5, 165, 255, 0.32), inset 0px 4px 13px rgba(0, 0, 0, 0.34);
+        }
     }
 
     &__video {

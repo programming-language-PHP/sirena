@@ -1,9 +1,13 @@
 <?php
+require_once('category_to_file.php');
+
 include '../../inc/connect_db.php';
 
 if (isset($_POST['category'])) {
     $category = mysqli_real_escape_string($link, $_POST["category"]);
     $sql = "DELETE FROM repertoire WHERE category = '$category'";
+
+    deleteCategoryToFile($category);
 }
 if (isset($_POST['sub_category'])) {
     $pieces = explode(",", $_POST['sub_category']);

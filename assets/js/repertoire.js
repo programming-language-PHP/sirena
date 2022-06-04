@@ -3,16 +3,15 @@ let json = document.getElementById('repertoire').getAttribute('data-repertoires'
     repertoire = JSON.parse(json),
     $repertoireItems = document.getElementById('repertoire__items'),
     groundingCategory = '',
-    groundingSubCategory = ''
-console.info(JSON.parse(json));
-let pathname = window.location.pathname,
+    groundingSubCategory = '',
+
+    pathname = window.location.pathname,
     segmentPathname = pathname.split('/'),
     lastPathIndex = segmentPathname.length - 1,
     lastPathname = segmentPathname[lastPathIndex],
     isFirstPage = lastPathname === '' || lastPathname === 'index.php'
-
+    
 repertoire.forEach((musicData) => {
-
 
     // Категория
     if (groundingCategory !== musicData.category) {
@@ -30,7 +29,7 @@ repertoire.forEach((musicData) => {
     }
 
     // Подкатегория
-    if (groundingSubCategory !== musicData.sub_category & musicData.sub_category !== '') {
+    if (groundingSubCategory !== musicData.sub_category & musicData.sub_category !== '' & musicData.sub_category !== 'Популярные') {
         let $category = document.querySelector('.repertoire__items li:last-child>ul'),
             $btnDelete = `<form class="delete" action='./music/del_music.php' method='POST'>
         <input type='hidden' name='sub_category' value='${

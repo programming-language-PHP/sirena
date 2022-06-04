@@ -17,7 +17,7 @@
         include "./inc/index/__full-screen.html";
         ?>
         <main class="main">
-            <section class="content">
+            <section class="content" id="content">
                 <?php
                 // Плюсы работы с певицы Sirena
                 include './inc/index/__pros.html';
@@ -41,6 +41,7 @@
         ?>
     </div>
 
+    <script src="./assets/js/index.js"></script>
     <script src="./assets/js/burger_menu.js"></script>
     <script src="./assets/js/fullscreen.js"></script>
     <script src="./assets/js/swiper@7.0.8/swiper-bundle.min.js"></script>

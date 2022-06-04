@@ -13,17 +13,12 @@
         display: grid;
         grid-auto-flow: row;
         grid-template: minmax(100px, auto) 1fr / 1fr;
-        border-radius: 90px;
-        box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3);
-        @include elemGradient;
-        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 80px rgba(124, 61, 160, 0.46);
     }
 
     &__header {
         padding: 20px;
-        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.3);
-        background: transparent;
-        border-radius: 0px 0px 75px 75px;
     }
 
     &__icon {
@@ -31,20 +26,27 @@
         margin: 0 auto;
 
         & img {
-            width: 100%;
+            width: 60%;
         }
     }
 
     &__title {
-        text-transform: uppercase;
-        font-size: 28px;
+        margin: 44px 0 0 0;
+        color: $color4;
+        font-weight: 600;
     }
 
     &__content {
-        text-align: justify;
-        margin: 30px;
-        text-indent: 10%;
-        font-size: 20px;
-        line-height: 1;
+        padding: 0 15px 20px 40px;
+        text-align: left;
+
+        &>ul>li {
+            color: $color5;
+            list-style: disc;
+
+            &::marker {
+                color: $color5;
+            }
+        }
     }
 }

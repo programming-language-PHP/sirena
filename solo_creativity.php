@@ -2,6 +2,7 @@
 <html lang="ru">
 
 <head>
+    <meta name="yandex-verification" content="93203ce5843e9d47" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">

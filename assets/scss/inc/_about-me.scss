@@ -17,9 +17,9 @@
 
     &__image {
         position: relative;
-        padding: 0px 0px 125% 0px;
+        padding: 0px 0px 105% 0px;
         background: transparent;
-        background: radial-gradient(circle at center, #9457EB 30%, #9457EB 10%, transparent 60%);
+        background: radial-gradient(circle at center, $color3 5%, transparent 70%);
 
         & img {
             width: 100%;
@@ -35,17 +35,18 @@
         text-align: center;
         padding: 15px;
         font-size: 60px;
-        background: linear-gradient(90deg, $gradient_color1 0%, #AE3D88 100%);
+        background: linear-gradient(90deg, $color2 0%, $color3 100%);
         border-radius: 20px;
         box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3);
     }
 
     &__text {
         text-align: justify;
-        font-size: 25px;
+        font-size: 18px;
 
         & p {
             text-indent: 10%;
+            color: $color5;
         }
     }
 }

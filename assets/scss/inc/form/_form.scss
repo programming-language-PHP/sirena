@@ -11,19 +11,19 @@
       font-size: 24px;
       width: 250px;
       height: 40px;
-      box-shadow: 0 10px 50px 0 $gradient_color2, inset 0 10px 50px 0 $gradient_color2;
       border-radius: 50px;
     }
 
     & label {
       margin: 0 0 5px 0;
+      color: $color4;
     }
 
     & input {
       margin: 0 0 15px 0;
       padding: 10px;
-      color: black;
-      border: 5px solid $gradient_color2;
+      color: $color4;
+      border: 5px solid $color5;
 
       &:focus {
         filter: contrast(200%);
@@ -31,11 +31,8 @@
     }
 
     & button {
-      background: $repertoire_title_color;
-
-      &:hover {
-        filter: contrast(200%);
-      }
+      @include buttonDesign;
+      padding: 0 0;
     }
   }
 
@@ -44,9 +41,8 @@
     background-color: $repertoire_title_color;
     @include adaptiv-value('width', 400, 320, 0);
     height: 250px;
-    margin-bottom: 25px;
     padding: 15px;
-
+    margin-bottom: 25px;
   }
 }
 

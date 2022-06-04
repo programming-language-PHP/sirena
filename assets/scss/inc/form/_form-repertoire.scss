@@ -2,6 +2,12 @@
 
 @import 'form-file';
 
+.form {
+  & form:last-child {
+    margin: 25px 0 0 0;
+  }
+}
+
 .delete {
   margin-left: 10px;
 }

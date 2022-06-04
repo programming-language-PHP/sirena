@@ -1,4 +1,4 @@
-User-agent:*
+User-Agent: *
 Allow: /index.php
 Allow: /solo creativity.php
 Allow: /gallery.php

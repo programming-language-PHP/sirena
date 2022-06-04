@@ -14,9 +14,6 @@
             if ($is_page_home) {
             ?>
                 <li>
-                    <a href="#pros" class="header__link header__link_hover">Плюсы работы с Sirena</a>
-                </li>
-                <li>
                     <a href="#about-me" class="header__link header__link_hover">О певице Sirena</a>
                 </li>
                 <li>
@@ -34,6 +31,9 @@
                 <li>
                     <a href="#repertoire" class="header__link header__link_hover">Репертуар</a>
                 </li>
+                <li>
+                    <a href="solo_creativity.php" class="header__link header__link_hover">Сольное творчество певицы</a>
+                </li>
             <?php
             } else { ?>
                 <li>
@@ -42,9 +42,6 @@
             <?php
             }
             ?>
-            <li>
-                <a href="solo_creativity.php" class="header__link header__link_hover">Сольное творчество певицы</a>
-            </li>
             <li class="header__telephone">
                 <a href="tel:+79778511554" class="header__link header__link_hover">+7 (977) 851-15-54</a>
             </li>
