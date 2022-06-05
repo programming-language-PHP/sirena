@@ -37,7 +37,7 @@
         font-size: 60px;
         background: linear-gradient(90deg, $color2 0%, $color3 100%);
         border-radius: 20px;
-        box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 10px 10px 10px 0 rgba($color3, 0.3);
     }
 
     &__text {

@@ -80,7 +80,7 @@
   //   }
   // }
 
-  @include adaptiv-value('margin-left', 150, 50, 0);
+  @include adaptiv-value('margin-left', 150, 0, 0);
   @include adaptiv-value('font-size', 30, 20, 0);
 
   &__item {

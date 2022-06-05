@@ -78,6 +78,7 @@ $media_iPad: 768px;
 }
 
 @mixin elemGradient {
+
     background: linear-gradient(180deg, $color1 0%, $color2 45.83%, $color3 100%);
 }
 
@@ -87,12 +88,15 @@ $media_iPad: 768px;
     line-height: 30px;
     display: inline-block;
     @include adaptiv-value('margin-bottom', 50, 5, 0);
-    padding: 16px 71px;
+    @include adaptiv-value('padding-top', 16, 8, 0);
+    @include adaptiv-value('padding-bottom', 16, 8, 0);
+    @include adaptiv-value('padding-left', 71, 26, 0);
+    @include adaptiv-value('padding-right', 71, 26, 0);
     border-radius: 15px;
     color: $color1;
     background-color: $color5;
 
     &:hover {
-      box-shadow: 0px 4px 91px rgba(5, 165, 255, 0.32), inset 0px 4px 13px rgba(0, 0, 0, 0.34);
+        box-shadow: 0px 4px 91px rgba(5, 165, 255, 0.32), inset 0px 4px 13px rgba(0, 0, 0, 0.34);
     }
 }
