@@ -3,7 +3,7 @@ session_start();
 ?>
 <header class="header">
     <a href="/" class="header__logo">
-        <img src="../assets/svg/sirena_icon.svg" alt="logo">
+        <img src="../assets/img/icon.png" alt="logo">
     </a>
     <div class="header__burger">
         <span></span>

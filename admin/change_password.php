@@ -32,6 +32,13 @@ if (!isset($_SESSION['user_id'])) {
                             <?php
                                 unset($_SESSION['error']);
                             }
+                            if (isset($_SESSION['success'])) { ?>
+                                <p class="success">
+                                    <?= $_SESSION['success'] ?>
+                                </p>
+                            <?php
+                                unset($_SESSION['success']);
+                            }
                             ?>
                             <label for="old_password">Введите старый пароль</label>
                             <input id="old_password" name="old_password" type="password" required />

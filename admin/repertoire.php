@@ -29,7 +29,15 @@ if (!isset($_SESSION['user_id'])) {
                                 <p class="error"><?= $_SESSION['error'] ?></p>
                             <?php
                                 unset($_SESSION['error']);
-                            } ?>
+                            }
+                            if (isset($_SESSION['success'])) { ?>
+                                <p class="success">
+                                    <?= $_SESSION['success'] ?>
+                                </p>
+                            <?php
+                                unset($_SESSION['success']);
+                            }
+                            ?>
                             <input type="file" name="file" accept=".json" id="form__file" class="form__file">
                             <label for="form__file" class="form__file-button">
                                 <span class="form__file-icon-wrapper">
@@ -55,7 +63,7 @@ if (!isset($_SESSION['user_id'])) {
 
                         <form enctype="multipart/form-data" action="./music/update_category_output_order.php" method="POST">
                             <label for="category_output_order">Порядок вывода категорий</label>
-                            <textarea name="category_output_order" class="form__links" id="category_output_order" >
+                            <textarea name="category_output_order" class="form__links" id="category_output_order">
                             <?= file_get_contents('../inc/category_output_order.txt') ?>
                             </textarea>
 

@@ -10,7 +10,7 @@ let json = document.getElementById('repertoire').getAttribute('data-repertoires'
     lastPathIndex = segmentPathname.length - 1,
     lastPathname = segmentPathname[lastPathIndex],
     isFirstPage = lastPathname === '' || lastPathname === 'index.php'
-    
+
 repertoire.forEach((musicData) => {
 
     // Категория
@@ -67,10 +67,11 @@ function getBtnDelete(isFirstPage, $btnDelete) {
     return isFirstPage ? '' : $btnDelete
 }
 
-// Обработчик событий
+
 let repertoire__title = document.querySelectorAll('.repertoire__title');
 
 repertoire__title.forEach((elem) => {
+    // Обработчик событий
     elem.addEventListener('click', () => {
         elem.nextElementSibling.classList.toggle("song-list_hide");
         elem.classList.toggle("repertoire__title_pressed");

@@ -14,7 +14,7 @@
         grid-auto-flow: row;
         grid-template: minmax(100px, auto) 1fr / 1fr;
         border-radius: 15px;
-        box-shadow: 0 4px 80px rgba(124, 61, 160, 0.46);
+        box-shadow: 0 4px 80px rgba($color2, 0.46);
     }
 
     &__header {

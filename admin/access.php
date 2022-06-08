@@ -39,11 +39,12 @@ if (isset($_POST['reg'])) {
             mysqli_query($link, $sql);
             $last_id = mysqli_insert_id($link);
             mysqli_close($link);
+            $_SESSION['success'] = 'Регистрация прошла успешно :)';
         } else {
-            $_SESSION['error'] = 'Пользователь с таким именем существует.';
+            $_SESSION['error'] = 'Пользователь с таким именем существует!';
         }
     } else {
-        $_SESSION['error'] = 'Пароли не совпали.';
+        $_SESSION['error'] = 'Пароли не совпали!';
     }
 }
 
@@ -64,12 +65,12 @@ if (isset($_POST['change_password'])) {
             $hash_new_password = password_hash($new_password, PASSWORD_DEFAULT);
             $sql = "UPDATE user SET password = '$hash_new_password' WHERE id = $user_id";
             mysqli_query($link, $sql);
-            $_SESSION['error'] = 'Всё прошло успешно :)';
+            $_SESSION['success'] = 'Смена пароля прошло успешно :)';
         } else {
-            $_SESSION['error'] = 'Новые пароли не совпали.';
+            $_SESSION['error'] = 'Новые пароли не совпали!';
         }
     } else {
-        $_SESSION['error'] = 'Неверный старый пароль.';
+        $_SESSION['error'] = 'Неверный старый пароль!';
     }
 }
 header("Location: " . $_SERVER['HTTP_REFERER']);

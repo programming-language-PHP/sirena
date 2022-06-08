@@ -22,6 +22,7 @@ $id = 1;
                 $file_name = $file;
             }
         }
+        // pathinfo - разбивате путь на массив
         $r_filename = pathinfo(basename($file_name))['filename'];
         ?>
         <div class="players__player">

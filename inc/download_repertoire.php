@@ -31,6 +31,9 @@ foreach ($taskList as $values) {
 }
 
 header("Content-type: text/plain");
+// Content-Disposition является индикатором того, что предполагается содержание ответа на веб-сайте,
+// как веб-страница или часть веб-страницы, или же как вложение, которое может быть скачано и изменено.
+// attachment - указывает на загружаемый контент
 header("Content-Disposition: attachment; filename=Репертуар Siren.txt");
 
 print "Репертуар Siren\n\n";

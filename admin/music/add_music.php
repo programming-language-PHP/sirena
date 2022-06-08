@@ -10,7 +10,7 @@ if (
         | empty($_POST['music_name'])
     )
 ) {
-    $_SESSION['error'] = 'Не выбран файл или не заполнены поля категория, автор, наименование музыки';
+    $_SESSION['error'] = 'Не выбран файл или не заполнены поля категория, автор, наименование музыки!';
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
 }
@@ -76,4 +76,5 @@ if (!empty($_FILES['file']['name'])) {
     }
 }
 mysqli_close($link);
+$_SESSION['success'] = 'Добавление прошло успешно :)';
 header("Location: " . $_SERVER['HTTP_REFERER']);

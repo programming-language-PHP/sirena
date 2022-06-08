@@ -1,4 +1,5 @@
 <?php
+session_start();
 $filename = $_POST['filename'];
 $folder_path = '../../audio/' . $filename;
 delete($folder_path);
@@ -18,5 +19,5 @@ function delete($path): bool
 
     return false;
 }
-
+$_SESSION['success'] = 'Удаление прошло успешно :)';
 header("Location: " . $_SERVER['HTTP_REFERER']);

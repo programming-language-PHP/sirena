@@ -1,13 +1,14 @@
 <?php
 session_start();
 if (empty($_POST['count_files']) and empty($_POST['links'])) {
-    $_SESSION['error'] = 'Поля не заполнены';
+    $_SESSION['error'] = 'Поля не заполнены!';
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
 }
 include '../../inc/connect_db.php';
 if (!empty($_POST['count_files'])) {
     $url = 'assets/img/gallery/';
+    // array_combine — cоздаёт новый массив, используя один массив в качестве ключей, а другой для его значений
     $file_data = array_combine($_FILES['files']['name'], $_FILES['files']['tmp_name']);
     foreach ($file_data as $filename => $file_tmp_name) {
         $sql = "INSERT INTO photo (date_added, url) VALUES (now(), '$url')";
@@ -31,4 +32,5 @@ if (!empty($_POST['links'])) {
     }
 }
 mysqli_close($link);
+$_SESSION['success'] = 'Добавление прошло успешно :)';
 header("Location: " . $_SERVER['HTTP_REFERER']);

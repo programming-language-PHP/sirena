@@ -6,8 +6,6 @@ if (basename($_SERVER['SCRIPT_NAME']) === 'index.php') {
     require_once('../inc/create_json.php');
     include '../inc/connect_db.php';
 }
-//require_once('./inc/create_json.php');
-//include './inc/connect_db.php';
 $sql = "SELECT url FROM photo";
 $result = mysqli_query($link, $sql);
 mysqli_close($link);
@@ -19,8 +17,7 @@ while (!is_dir($path_to_assets)) {
 
 $swiper_button = $path_to_assets . 'svg/slider/slider__button.svg';
 ?>
-<section data-name='images' data-images='<?= createJson($result) ?>'
-         class="content__slider slider" id="photos">
+<section data-name='images' data-images='<?= createJson($result) ?>' class="content__slider slider" id="photos">
     <h1 class="slider__title title">Фотографии</h1>
     <!-- Слайдер -->
     <div class="image-slider swiper">

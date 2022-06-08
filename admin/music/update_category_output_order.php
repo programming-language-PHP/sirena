@@ -12,4 +12,5 @@ if ($r_category_output_order === $file_content) {
 $file_content = $r_category_output_order;
 // Пишем содержимое обратно в файл
 file_put_contents($file, $file_content);
+$_SESSION['success'] = 'Изменение порядка прошло успешно :)';
 header("Location: " . $_SERVER['HTTP_REFERER']);

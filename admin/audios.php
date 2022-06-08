@@ -29,7 +29,15 @@ if (!isset($_SESSION['user_id'])) {
                                 <p class="error"><?= $_SESSION['error'] ?></p>
                             <?php
                                 unset($_SESSION['error']);
-                            } ?>
+                            }
+                            if (isset($_SESSION['success'])) { ?>
+                                <p class="success">
+                                    <?= $_SESSION['success'] ?>
+                                </p>
+                            <?php
+                                unset($_SESSION['success']);
+                            }
+                            ?>
                             <input type="file" name="files[]" accept="audio/*,.jpg,.jpeg,.png" id="form__file" class="form form__file" multiple>
                             <label for="form__file" class="form__file-button">
                                 <span class="form__file-icon-wrapper">

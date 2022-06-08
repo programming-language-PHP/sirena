@@ -1,5 +1,4 @@
 .video {
-    // max-width: 1200px;
     margin: 120px auto 0 auto;
 
     &__title {}
@@ -9,13 +8,11 @@
         gap: 20px;
         grid-template-columns: repeat(3, 1fr);
 
-        // grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
         @media (max-width: 768px) {
-            // @include adaptiv-circle(550, 310, 1);
             grid-template-columns: repeat(2, 1fr);
         }
+
         @media (max-width: 500px) {
-            // @include adaptiv-circle(550, 310, 1);
             grid-template-columns: repeat(1, 1fr);
         }
     }
@@ -24,7 +21,7 @@
         position: relative;
         margin: 0px 0px 15px 0px;
         padding: 0px 0px 56% 0px;
-        box-shadow: 10px 10px 20px 0 $color3;
+        box-shadow: 10px 10px 20px 0 $color2;
 
         & video,
         & iframe {

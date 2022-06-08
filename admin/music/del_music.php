@@ -21,4 +21,5 @@ if (isset($_POST['music'])) {
 }
 mysqli_query($link, $sql);
 mysqli_close($link);
+$_SESSION['success'] = 'Удаление прошло успешно :)';
 header("Location: " . $_SERVER['HTTP_REFERER']);

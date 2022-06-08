@@ -17,8 +17,6 @@
     position: relative;
     border-radius: 50px;
 
-    // background: linear-gradient(to right, $gradient_color1, $gradient_color2) border-box;
-
     & img {
       max-width: 96%;
       /* в данном случае убирает срезание снизу лого. В видео был срез */
@@ -32,6 +30,7 @@
 
   &__menu {
     grid-column: 3 / 4;
+    line-height: 10px;
   }
 
   &__list {
@@ -55,7 +54,7 @@
     transition: all 1s ease;
 
     &_hover:hover {
-      color: $color2;
+      color: $color7;
     }
   }
 
@@ -164,6 +163,7 @@
       background-color: $color5;
       padding: 70px 10px 20px 10px;
       z-index: 99998;
+      line-height: 30px;
 
       &.active {
         top: 0;

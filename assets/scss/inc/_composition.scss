@@ -7,12 +7,9 @@
     gap: 20px;
     justify-content: center;
     grid-template: 1fr / repeat(2, .5fr);
-    // grid-template-columns: repeat(auto-fit, minmax(310px, 620px));
-    // @include adaptiv-circle(550, 310, 0);
 
     @media (max-width: 768px) {
-        // @include adaptiv-circle(550, 310, 1);
-        grid-template: 1fr / repeat(1, 1fr);
+      grid-template: 1fr / repeat(1, 1fr);
     }
   }
 
@@ -23,8 +20,7 @@
     row-gap: 25px;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 80px 0 rgba(124, 61, 160, 0.46);
-    // overflow: hidden;
+    box-shadow: 0 4px 80px 0 rgba($color2, 0.46);
   }
 
   &__title,

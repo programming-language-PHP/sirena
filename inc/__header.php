@@ -1,6 +1,6 @@
 <header class="header">
     <a href="/" class="header__logo">
-        <img src="./assets/svg/sirena_icon.svg" alt="logo">
+        <img src="./assets/img/icon.png" alt="logo">
     </a>
     <?php
     $is_page_home = basename($_SERVER['SCRIPT_NAME']) === 'index.php';
