@@ -243,7 +243,6 @@ new Swiper('.image-slider', {
                 arr_images = document.querySelector('.slider'),
                 images = JSON.parse(arr_images.dataset.images),
                 firstDirectory = isMainPage() ? './' : '../'
-            // let firstDirectory = './'
 
             for (let index in images) {
                 let url, path_to_photography, filename
@@ -260,6 +259,7 @@ new Swiper('.image-slider', {
                     <button class="btn-delete" type='submit'>Удалить</button>
                 </form>`
 
+                // unshift добавляет элемент в начало массива
                 slide.unshift(`
                     <div data-hash="slide-${filename}" class="image-slider__slide swiper-slide">
                         <div class="image-slider__image swiper-zoom-container">

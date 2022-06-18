@@ -46,6 +46,7 @@ if (!empty($_FILES['file']['name'])) {
             if (gettype($sub_values) === 'array') {
                 if ($sub_category === 'Популярные') {
                     foreach ($sub_values as $value) {
+                        // explode — Разбивает строку с помощью разделителя
                         $pieces = explode("+", $value);
                         $executor = mysqli_real_escape_string($link, $pieces[0]);
                         $music_name = mysqli_real_escape_string($link, $pieces[1]);
@@ -55,6 +56,7 @@ if (!empty($_FILES['file']['name'])) {
                     }
                 } else {
                     foreach ($sub_values as $value) {
+                        // explode — Разбивает строку с помощью разделителя
                         $pieces = explode("+", $value);
                         $sub_category_sql = mysqli_real_escape_string($link, $sub_category);
                         $executor = mysqli_real_escape_string($link, $pieces[0]);
@@ -65,6 +67,7 @@ if (!empty($_FILES['file']['name'])) {
                     }
                 }
             } else {
+                // explode — Разбивает строку с помощью разделителя
                 $pieces = explode("+", $sub_values);
                 $executor = mysqli_real_escape_string($link, $pieces[0]);
                 $music_name = mysqli_real_escape_string($link, $pieces[1]);

@@ -25,6 +25,7 @@ repertoire.forEach((musicData) => {
                 ${musicData.category}` + getBtnDelete(isFirstPage, $btnDelete) + `</h2>
             <ul data-category="${musicData.category}" class="repertoire__song-list song-list song-list_hide"></ul>
         </li>`
+        // 'beforeend': сразу перед закрывающим тегом element (после последнего потомка).
         $repertoireItems.insertAdjacentHTML('beforeend', category)
     }
 
@@ -67,12 +68,12 @@ function getBtnDelete(isFirstPage, $btnDelete) {
     return isFirstPage ? '' : $btnDelete
 }
 
-
 let repertoire__title = document.querySelectorAll('.repertoire__title');
 
 repertoire__title.forEach((elem) => {
     // Обработчик событий
     elem.addEventListener('click', () => {
+        // nextElementSibling – берёт следующий соседний элемент в данном случае <ul>
         elem.nextElementSibling.classList.toggle("song-list_hide");
         elem.classList.toggle("repertoire__title_pressed");
     });
